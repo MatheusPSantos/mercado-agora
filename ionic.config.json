@@ -1,0 +1,8 @@
+{
+  "name": "mercado-agora",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
