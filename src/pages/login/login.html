@@ -1,12 +1,26 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>login</ion-title>
+    <ion-title>Mercado Agora</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <button ion-button block (click)="login()">Login com Facebook</button>
+  <ion-card>
+    <img src="../../assets/imgs/logotipo.png" alt="logotipo do mercado agora">
+
+    <ion-card-content>
+      <ion-card-title>
+        Pronto para compra?
+      </ion-card-title>
+      <p>
+        Para continuar, faça o login usando uma conta válida do Facebook.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button full icon-left block (click)="login()">
+    <ion-icon name="logo-facebook"></ion-icon>Login com Facebook
+  </button>
 </ion-content>
