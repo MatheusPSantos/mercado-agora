@@ -13,14 +13,17 @@
 
     <ion-card-content>
       <ion-card-title>
-        Pronto para compra?
+        Pronto para comprar?
       </ion-card-title>
       <p>
         Para continuar, faça o login usando uma conta válida do Facebook.
       </p>
     </ion-card-content>
   </ion-card>
-  <button ion-button full icon-left block (click)="login()">
+  <button ion-button full icon-left block (click)="loginFacebook()">
     <ion-icon name="logo-facebook"></ion-icon>Login com Facebook
+  </button>
+  <button ion-button full icon-left block color="danger" (click)="loginGoogle()">
+    <ion-icon name="logo-google"></ion-icon>Usar uma conta do Google
   </button>
 </ion-content>
