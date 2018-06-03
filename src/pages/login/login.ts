@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import firebase from 'firebase';
-import { Facebook } from '@ionic-native/facebook';
+import { HomePage } from '../home/home';
 //import { Usuario } from '../../models/Usuario';
 
 @IonicPage()
@@ -12,86 +12,59 @@ import { Facebook } from '@ionic-native/facebook';
 })
 export class LoginPage {
 
-  constructor(
-    public navCtrl: NavController,
-    public facebook: Facebook
-  ) {
+  constructor(public navCtrl: NavController,) {
     
   }
 
-  login() {
+  // autenticação com o Facebook
+  async loginFacebook() {
     firebase.auth().useDeviceLanguage();
     
     var provider = new firebase.auth.FacebookAuthProvider();
 
-    firebase.auth().signInWithPopup(provider).then(function(result) {
-      var token = result.credential.accessToken;
-      var user = result.user;
-      // e-mail de verificação é enviado ao usuário
-      user.sendEmailVerification().then(function() {
+    firebase.auth().signInWithPopup(provider)
+      .then(function(result) {
+        var token = result.credential.accessToken;
+        var user = result.user;
+        this.navCtrl.push(HomePage);
+      })
+      .catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        var email = error.email;
+        var credential = error.credential;
 
-      }).catch(function(error){
-        console.log(error);
       });
-      
-    }).catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
-    });
-
   }
-// método para chamar a api do facebook e salvar o usuário no banco
-/*  login() {
-    let permissions = new Array<string>();
-    permissions = ["public_profile", "email"];
+  
+  // autenticação com a conta do Google
+  async loginGoogle() {
+    // instancia do objeto provedor do google
+    var provider = new firebase.auth.GoogleAuthProvider();
+    // redirecionando para página de solicitação do login
+    firebase.auth().signInWithRedirect(provider);
+    // recuperando o token do provedor do Google
+    firebase.auth().getRedirectResult()
+      .then(function(result) {
+        if(result.credential) {
+          //Isso fornece um token do Google Access.
+          var token = result.credential.accessToken;
+        }
+        // o usuário que está entrando
+        var user = result.user;
+        this.navCtrl.push(HomePage);
+      })
+      .catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // erro no e-mail
+        var email = error.email;
+        // a credencial de autenticação que foi usada
+        var credential = error.credential;
 
-    this.facebook.login(permissions)
-      .then((response) => {
-        let params = new Array<string>();
-
-        this.facebook.api("/me?fields=name, email", params)
-          .then(res => {
-            // usando o model para criar o usuario
-            let usuario = new Usuario();
-
-            usuario.name = res.name;
-            usuario.email = res.email;
-            usuario.senha = res.id;
-            usuario.login = res.email;
-
-            this.logar(usuario);
-          }, (error) => {
-            alert(error);
-            console.log('ERRO LOGIN: ', error);
-          })
-      }, (error)=>{
-        alert(error);
       });
   }
 
-  logar(usuario: Usuario) {
-    this.salvarService.salvarFacebook(usuario)
-      .then(()=>{
-        console.log('Usuario cadastrado via facebook com sucesso');
-      })
-  }
-/*
-  login() {
-    let provider = new firebase.auth.FacebookAuthProvider();
-    
-    firebase.auth().signInWithRedirect(provider)
-      .then(()=>{
-        firebase.auth().getRedirectResult()
-          .then((result)=>{
-            alert(JSON.stringify(result));
-          }).catch(function(error) {
-            alert(JSON.stringify(error))
-          });
-      })
-  }
-*/
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
