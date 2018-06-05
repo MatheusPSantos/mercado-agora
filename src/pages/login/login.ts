@@ -26,7 +26,7 @@ export class LoginPage {
       .then(function(result) {
         var token = result.credential.accessToken;
         var user = result.user;
-        this.navCtrl.push(HomePage);
+        
       })
       .catch(function(error) {
         var errorCode = error.code;
@@ -36,7 +36,7 @@ export class LoginPage {
 
       });
   }
-  
+
   // autenticação com a conta do Google
   async loginGoogle() {
     // instancia do objeto provedor do google
@@ -52,7 +52,7 @@ export class LoginPage {
         }
         // o usuário que está entrando
         var user = result.user;
-        this.navCtrl.push(HomePage);
+        
       })
       .catch(function(error) {
         var errorCode = error.code;
