@@ -35,6 +35,8 @@ export class LoginPage {
         var credential = error.credential;
 
       });
+      console.log('redirecionado...');
+      this.navCtrl.setRoot(HomePage);  // setando a página Inicial como Root
   }
 
   // autenticação com a conta do Google
@@ -63,6 +65,8 @@ export class LoginPage {
         var credential = error.credential;
 
       });
+    console.log('redirecionado ....');
+    this.navCtrl.setRoot(HomePage); // setando a página Inicial como Root
   }
 
   ionViewDidLoad() {
