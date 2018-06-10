@@ -1,3 +1,4 @@
+import { HomePage, MenuModalPage } from './home';
 import { Component } from '@angular/core';
 import { NavController, ModalController, NavParams, Platform, ViewController } from 'ionic-angular';
 
@@ -15,7 +16,7 @@ export class HomePage {
   presentMenuModal() {
     let menuModal = this.modalCtrl.create(MenuModalPage);
     menuModal.present();
-  }
+  }  
 }
 
 @Component({
