@@ -1,34 +1,61 @@
 page-home {
-  
+  ion-card {
+    position: relative;
+    text-align: center;
+
+    .imagem-produto {
+      position: relative;
+      width: 50%;
+      height: 50%;
+      margin: 0 0 0 25%;
+    }
+    .supermercado-e-preco {
+      display: flex;
+      flex-wrap: initial;
+
+      .icone-mercado {
+        width: 30px;
+        height: 30px;
+        position: relative;
+      }
+      .preco-promocao {
+        text-align: left;
+        font-size: 1em;
+        margin: 5px 0 0 5px;
+        color: #00ff00;
+      }
+    }
+  }
+
 }
 
 menu-modal {
   .card-background-page {
-      ion-card {
-        position: relative;
-        text-align: center;
-      }
-    
-      .card-title {
-        position: absolute;
-        top: 60%;
-        font-size: 2.0em;
-        width: 100%;
-        font-weight: bold;
-        color: #fff;
-        opacity: 1;
-        background: rgba($color: #000, $alpha: 0.4)
-      }
-    
-      .card-subtitle {
-        font-size: 1.0em;
-        position: absolute;
-        top: 80%;
-        width: 100%;
-        color: #fff;
-        opacity: 1;
-        background: rgba($color: #000, $alpha: 0.4)
-      }
-    
+    ion-card {
+      position: relative;
+      text-align: center;
     }
+  
+    .card-title {
+      position: absolute;
+      top: 60%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+      opacity: 1;
+      background: rgba($color: #000, $alpha: 0.4)
+    }
+  
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 80%;
+      width: 100%;
+      color: #fff;
+      opacity: 1;
+      background: rgba($color: #000, $alpha: 0.4)
+    }
+    
+  }
 }

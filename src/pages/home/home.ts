@@ -1,4 +1,3 @@
-import { HomePage, MenuModalPage } from './home';
 import { Component } from '@angular/core';
 import { NavController, ModalController, NavParams, Platform, ViewController } from 'ionic-angular';
 
