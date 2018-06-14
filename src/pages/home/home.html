@@ -1,13 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Mercado Agora
     </ion-title>
+    <!-- Botão que chama o modal com o menu -->
+    <ion-buttons start>
+      <button ion-button (click)="presentMenuModal()">
+        <span ion-text color="primary">Menu</span>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <p>
-    Página Inicial
-  </p>
+<!-- Região onde irá aparecer as promoções -->
+  <ion-card>
+    <img class="imagem-produto" src="http://www.hortifruti.com.br/wp-content/themes/hortifruti-novo//inc/timthumb.php?w=229&h=182&zc=2&a=c&q=75&src=http://www.hortifruti.com.br/wp-content/uploads/2014/10/PRODUTO_abacate.png">
+    <ion-card-content>
+      <ion-card-title>
+        Mamão Papaia
+      </ion-card-title>
+      <p>
+        Venha curtir a promoção do mamão papaia.
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <ion-icon name="star"></ion-icon>
+        Promoção
+      </ion-col>
+
+      <ion-col class="supermercado-e-preco">
+        <img class="icone-mercado" src="https://www.freeiconspng.com/uploads/walmart-logo-png-22.png">
+        <span class="preco-promocao">R$ 4,00/kg</span>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>
