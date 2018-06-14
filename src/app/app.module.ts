@@ -26,6 +26,7 @@ firebase.initializeApp({
     HomePage,
     LoginPage,
     MenuModalPage,
+
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,7 @@ export class HomePage {
     menuModal.present();
   }  
 }
-
+// Menu modal
 @Component({
   selector: 'menu-modal',
   templateUrl: 'menu-modal.html',
