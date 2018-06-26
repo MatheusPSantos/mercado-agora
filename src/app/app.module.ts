@@ -9,6 +9,7 @@ import { MenuModalPage } from './../pages/home/home';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { TabsPage } from './../pages/tabs/tabs';
 
 import firebase from 'firebase';
 firebase.initializeApp({
@@ -26,7 +27,7 @@ firebase.initializeApp({
     HomePage,
     LoginPage,
     MenuModalPage,
-
+    TabsPage,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +37,7 @@ firebase.initializeApp({
     {
       links: [
         { component: MenuModalPage, name: 'MenuModalPage', segment: 'menu-modal' },
+        { component: TabsPage, name: 'TabsPage', segment: 'page-tabs' },
       ]
     }
   )
@@ -46,6 +48,7 @@ firebase.initializeApp({
     HomePage,
     LoginPage,
     MenuModalPage,
+    TabsPage,
   ],
   providers: [
     StatusBar,
