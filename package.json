@@ -33,8 +33,8 @@
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-facebook4": "^2.1.0",
     "cordova-plugin-inappbrowser": "^3.0.0",
-    "cordova-plugin-ionic-keyboard": "^2.0.5",
-    "cordova-plugin-ionic-webview": "^1.1.19",
+    "cordova-plugin-ionic-keyboard": "^2.1.2",
+    "cordova-plugin-ionic-webview": "^1.2.1",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-whitelist": "^1.3.3",
     "cordova-universal-links-plugin": "^1.2.1",
@@ -59,7 +59,8 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-facebook4": {
         "APP_ID": "381837248965501",
-        "APP_NAME": "mercado-agora"
+        "APP_NAME": "mercado-agora",
+        "ANDROID_SDK_VERSION": "4.+"
       },
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
