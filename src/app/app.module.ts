@@ -5,12 +5,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Facebook } from '@ionic-native/facebook';
 
-import { MenuModalPage } from './../pages/home/home';
+import { MenuPerfilPage } from './../pages/tabs/tabs';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { CartPage } from './../pages/cart/cart';
+import { TabsPage } from './../pages/tabs/tabs';
+import { PromosPage } from '../pages/promos/promos';
 
 import firebase from 'firebase';
+
 firebase.initializeApp({
   apiKey: "AIzaSyCddXR7I8GkLe9rdva6-VIiCDxk-oDTg90",
   authDomain: "mercadoagora-1f3a7.firebaseapp.com",
@@ -25,8 +29,10 @@ firebase.initializeApp({
     MyApp,
     HomePage,
     LoginPage,
-    MenuModalPage,
-
+    MenuPerfilPage,
+    TabsPage,
+    CartPage,
+    PromosPage,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,7 @@ firebase.initializeApp({
     },
     {
       links: [
-        { component: MenuModalPage, name: 'MenuModalPage', segment: 'menu-modal' },
+        { component: MenuPerfilPage, name: 'MenuPerfilPage', segment: 'menu-perfil' },
       ]
     }
   )
@@ -45,7 +51,11 @@ firebase.initializeApp({
     MyApp,
     HomePage,
     LoginPage,
-    MenuModalPage,
+    MenuPerfilPage,
+    TabsPage,
+    PromosPage,
+    CartPage,
+    
   ],
   providers: [
     StatusBar,
